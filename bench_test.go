@@ -1007,7 +1007,7 @@ func BenchmarkTrieMuxRouterWithGithubAPI(b *testing.B) {
 	benchRoutes(b, trieMuxRouter, githubAPI)
 }
 
-func BenchmarkBaseRouterWithGithubAPI(b *testing.B) {
+func BenchmarkBRouterWithGithubAPI(b *testing.B) {
 	benchRoutes(b, bRouter, githubAPI)
 }
 
