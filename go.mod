@@ -8,7 +8,7 @@ require (
 	github.com/go-chi/chi v1.5.0
 	github.com/go-zoo/bone v1.3.0
 	github.com/gorilla/mux v1.8.0
-	github.com/julienschmidt/httprouter v1.3.0
+	github.com/julienschmidt/httprouter v1.3.1-0.20200921135023-fe77dd05ab5a
 	github.com/teambition/trie-mux v1.5.0
 	github.com/xujiajun/gorouter v1.2.0
 )
