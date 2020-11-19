@@ -10,6 +10,7 @@ import (
 	"runtime"
 	"testing"
 
+	"github.com/antlabs/brouter"
 	beegomux "github.com/beego/mux"
 	"github.com/go-chi/chi"
 	"github.com/go-zoo/bone"
@@ -916,8 +917,8 @@ func init() {
 	})
 
 	calcMem("BRouter", func() {
-		router := New()
-		handler := func(w http.ResponseWriter, _ *http.Request, _ Params) {
+		router := brouter.New()
+		handler := func(w http.ResponseWriter, _ *http.Request, _ brouter.Params) {
 			w.WriteHeader(204)
 		}
 		for _, route := range githubAPI {

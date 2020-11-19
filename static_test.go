@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/antlabs/brouter"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -178,13 +179,13 @@ var (
 var loadTestHandler = false
 
 func httpRouterHandle(_ http.ResponseWriter, _ *http.Request, _ httprouter.Params) {}
-func BRouterHandle(_ http.ResponseWriter, _ *http.Request, _ Params)               {}
+func BRouterHandle(_ http.ResponseWriter, _ *http.Request, _ brouter.Params)       {}
 
 func httpRouterHandleTest(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	io.WriteString(w, r.RequestURI)
 }
 
-func BRouterHandleTest(w http.ResponseWriter, r *http.Request, _ Params) {
+func BRouterHandleTest(w http.ResponseWriter, r *http.Request, _ brouter.Params) {
 	io.WriteString(w, r.RequestURI)
 }
 
@@ -207,7 +208,7 @@ func loadBRouter(routes []route) http.Handler {
 		h = BRouterHandleTest
 	}
 
-	router := New()
+	router := brouter.New()
 	for _, route := range routes {
 		router.Handle(route.method, route.path, h)
 	}
